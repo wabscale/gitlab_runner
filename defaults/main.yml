@@ -7,3 +7,4 @@ gitlab_port: '8443'
 docker_runner: true
 shell_runner: false
 gitlab_concurrent: -1  # default to number of cores
+gitlab_tags_extra: ''

@@ -127,7 +127,7 @@
     --docker-tlsverify=false \
     --docker-privileged \
     --locked=false \
-    --tag-list "{{ ansible_distribution|lower }}{{ ansible_distribution_major_version }},docker" \
+    --tag-list "{{ ansible_distribution|lower }}{{ ansible_distribution_major_version }},docker,{{ gitlab_tags_extra }}" \
     --docker-image='{{ gitlab_runner_image |default('alpine') }}'
   ignore_errors: true
   tags:
@@ -145,7 +145,7 @@
     --registration-token "{{ gitlab_runner_token }}" \
     --description "shell-runner" \
     --locked=false \
-    --tag-list "{{ ansible_distribution|lower }}{{ ansible_distribution_major_version }},shell" \
+    --tag-list "{{ ansible_distribution|lower }}{{ ansible_distribution_major_version }},shell,{{ gitlab_tags_extra }}" \
     --executor "shell"
   ignore_errors: true
   tags:
